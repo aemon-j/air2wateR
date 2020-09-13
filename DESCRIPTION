@@ -1,0 +1,20 @@
+Package: air2wateR
+Type: Package
+Title: Work with air2wateR in R
+Version: 0.0.9
+Authors@R: c(person("Tadhg", "Moore", role = c("aut","cre"),
+    email = "tadhgm@vt.edu"),
+    person("Sebastiano", "Piccoloroaz", role = "aut",
+    email = "s.piccolroaz@unitn.it"))
+URL: https://github.com/aemon-j/air2wateR/
+Maintainer: The package maintainer <tadhgm@vt.edu>
+Description: Run the air2water model within R. Comes with a compiled version of air2water and example files.
+License: GPL-2.0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Depends:
+    R (>= 3.5)
+Suggests:
+    reshape2,
+    ggplot2

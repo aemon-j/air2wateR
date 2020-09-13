@@ -1,0 +1,5 @@
+! File of input parameters for PSO
+200			! n_particles
+2 2	   			! c1 c2
+0.9  0.4    	! wmax wmin
+-999			! mineff_index
