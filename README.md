@@ -1,7 +1,7 @@
 # air2wateR - R package
 
-A model to predict Lake Surface Temperature (LST) using air temperature.
-Version 2.0.0 - January 2017
+An R package that uses the [air2water model](https://github.com/spiccolroaz/air2water/) to predict Lake Surface Temperature (LST) using air temperature.
+Version 2.0.0 - January 2017 - compiled September 2020.
 
 To install `air2wateR` from Github with:
 
