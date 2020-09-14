@@ -10,7 +10,7 @@ RMS 		# objective function: KGE, NSE, RMS
 CRN 		# numerical model: CRN, RK2, RK4 or EUL
 PSO 		# PSO, FORWARD, LATHYP
 0.01 		# minimum percentage of data: 0...1
-200  		# nrun
+2000  		# nrun
 -2 			# mineff_index
 1 			# log_flag
 0.9			# Courant number
