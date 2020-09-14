@@ -21,12 +21,14 @@
 #'@importFrom utils packageName
 run_air2water <- function (sim_folder = ".", verbose = FALSE) {
 
-  if(!file.exists(file.path(sim_folder, "parameters.txt"))) {
-    stop("No 'parameters.txt' in ", sim_folder,'\nThis file is required!')
-  }
-
   if(!file.exists(file.path(sim_folder, "input.txt"))) {
     stop("No 'input.txt' in ", sim_folder,'\nThis file is required!')
+  }
+  input_data <- read.table(file.path(sim_folder, "input.txt"), stringsAsFactors = FALSE)
+  folder <- input_data[1,1]
+
+  if(!file.exists(file.path(sim_folder, folder, "parameters.txt"))) {
+    stop("No 'parameters.txt' in ", sim_folder,'\nThis file is required!')
   }
 
   if (.Platform$pkgType == "win.binary") {

@@ -21,6 +21,8 @@ gen_param <- function(sim_folder, mean_depth) {
   if(!file.exists(file.path(sim_folder, "input.txt"))) {
     stop("No 'input.txt' in ", sim_folder,'\nThis file is required!')
   }
+  input_data <- read.table(file.path(sim_folder, "input.txt"), stringsAsFactors = FALSE)
+  folder <- input_data[1,1]
 
   if(!is.numeric(mean_depth)) {
     stop("mean_depth must be a numeric value.")
@@ -173,12 +175,12 @@ gen_param <- function(sim_folder, mean_depth) {
   parameters <- rbind(p1,p2,p3,p4,p5,p6,p7,p8)
   parameters <- t(parameters)
 
-  write.table(parameters, file = file.path(sim_folder, 'parameters.txt'),
+  write.table(parameters, file = file.path(sim_folder, folder, 'parameters.txt'),
               row.names = FALSE, col.names = FALSE)
 
   message('Written parameters:\n')
   print((round(parameters, 2)))
-  message('to file: ', file.path(sim_folder, 'parameters.txt'))
+  message('to file: ', file.path(sim_folder, folder, 'parameters.txt'))
 
 
 }
