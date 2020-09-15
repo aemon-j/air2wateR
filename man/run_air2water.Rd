@@ -4,14 +4,23 @@
 \alias{run_air2water}
 \title{Run the air2water model}
 \usage{
-run_air2water(sim_folder = ".", verbose = FALSE)
+run_air2water(sim_folder = ".", mode = "pso", use_pars = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{sim_folder}{filepath; the directory where simulation files are contained}
 
-\item{verbose}{Save output as character vector. Defaults to FALSE}
+\item{mode}{character; mode in which the model will be run. There are three options:
+\enumerate{
+ \item "pso" - Particle swarm operator which runs a calibration routine and then a model simulation with the best parameters (default)
+ \item "forward" - runs the model once with a set of provided parameters.
+ \item "lhc" - Uses Latin hypercube sampling to calibrate the model and then a model simulation with the best parameters.
+}}
 
-\item{par_file}{filepath; to file with air2water setup. Defaults to 'air2water.par'}
+\item{use_pars}{boolean; use the parameters from the recent calibration. Only in
+"forward" mode. This will use the results from calibration routine in file
+"1_XXX_xxx.out" and write to "parameters_forward.txt" before running the model. Defaults to TRUE.}
+
+\item{verbose}{Save output as character vector. Defaults to FALSE}
 }
 \description{
 This runs the air2water model on the specific simulation stored in \code{sim_folder}.
