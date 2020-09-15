@@ -18,7 +18,7 @@ run_air2water(sim_folder = ".", mode = "pso", use_pars = TRUE, verbose = FALSE)
 
 \item{use_pars}{boolean; use the parameters from the recent calibration. Only in
 "forward" mode. This will use the results from calibration routine in file
-"1_XXX_xxx.out" and write to "parameters_forward.txt" before running the model.}
+"1_XXX_xxx.out" and write to "parameters_forward.txt" before running the model. Defaults to TRUE.}
 
 \item{verbose}{Save output as character vector. Defaults to FALSE}
 }

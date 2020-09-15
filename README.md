@@ -21,7 +21,7 @@ sim_folder <- system.file('extdata', package = 'air2wateR')
 gen_param(sim_folder = sim_folder, mean_depth = 147)
 
 # Run the model
-run_air2water(sim_folder = sim_folder)
+run_air2water(sim_folder = sim_folder, mode = "pso")
 
 ```
 
@@ -38,6 +38,7 @@ plot_param(sim_folder = sim_folder) +
 
 ## Compare simulated to observed
 ```{r gh-installation, eval = FALSE}
+run_air2water(sim_folder = sim_folder, mode = "forward", use_pars = TRUE)
 out <- get_outputs(sim_folder = sim_folder)
 
 library(ggplot2)

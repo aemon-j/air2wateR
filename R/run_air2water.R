@@ -2,7 +2,8 @@
 #'
 #'@description
 #'This runs the air2water model on the specific simulation stored in \code{sim_folder}.
-#'The specified \code{sim_folder} must contain valid NML files.
+#'The specified \code{sim_folder} must contain a valid air2water file setup. It also
+#'allows the model to be run in calibration or forward mode.
 #'
 #'@param sim_folder filepath; the directory where simulation files are contained
 #'@param mode character; mode in which the model will be run. There are three options:
@@ -13,7 +14,7 @@
 #'}
 #'@param use_pars boolean; use the parameters from the recent calibration. Only in
 #'"forward" mode. This will use the results from calibration routine in file
-#' "1_XXX_xxx.out" and write to "parameters_forward.txt" before running the model.
+#' "1_XXX_xxx.out" and write to "parameters_forward.txt" before running the model. Defaults to TRUE.
 #'@param verbose Save output as character vector. Defaults to FALSE
 #'
 #'@keywords methods
@@ -23,7 +24,8 @@
 #'\dontrun{
 #'sim_folder <- system.file('extdata', package = 'air2wateR')
 #'gen_param(sim_folder = sim_folder, mean_depth = 147)
-#'run_air2water(sim_folder = sim_folder)
+#'run_air2water(sim_folder = sim_folder, method = "pso")
+#'run_air2water(sim_folder = sim_folder, method = "forward", use_pars = TRUE)
 #'}
 #'@export
 #'@importFrom utils packageName
